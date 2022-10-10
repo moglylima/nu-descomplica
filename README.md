@@ -36,5 +36,7 @@ Formação em tecnologia Instituto Nu
 <img height=24he src="https://img.shields.io/github/languages/count/moglesonlima/nu-descomplica" /> 
 <img height=25he src="https://img.shields.io/github/stars/moglesonlima/nu-descomplica?style=social" /> 
 <img height=25he src="https://img.shields.io/github/watchers/moglesonlima/nu-descomplica?style=social" />
-
+<br>
+<br>
+<br>
 </p>

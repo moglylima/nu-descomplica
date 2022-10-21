@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Lista vazia visando adição dos elementos via script -->
+    <ul id="lista">
+      <li>Item 1</li>
+    </ul>
+  </body>
+  <script>
+    //Criando elemento
+    var element = document.createElement("div");
+    //Adicionando texto ao elemento criado
+    element.innerText = "Texto do elemento";
+    //Modificando elemento
+    element.style.backgroundColor = "lightblue";
+    document.body.append(element);
+    //document.body.appendChild(element);
+
+    // Criando elemento li
+
+    var lista = document.getElementById("lista");
+    var li = document.createElement("li");
+    li.textContent = "Item ao final da lista";
+    lista.appendChild(li);
+  </script>
+</html>

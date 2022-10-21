@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Element DOM ex. 4</title>
+  </head>
+  <body>
+    <h1>Usando seletor do DOM</h1>
+
+    <ul>
+      <li>Item 1 - Java</li>
+      <li>Item 2 - Python</li>
+      <li>Item 3 - GO</li>
+      <li>Item 4 - C++</li>
+      <li>Item 5 - JS</li>
+    </ul>
+
+    <div id="conteudo"></div>
+
+    <!-- Trabalhando com divs com o mesmo name -->
+    <div name="div02">OK 00</div>
+
+    <div name="div02">OK 01</div>
+
+    <div class="class-name"></div>
+
+    <!-- Usando Seletores CSS -->
+    <span id="span" class="novo"> Texto do novo span </span>
+
+    <!-- Pegando varias class -->
+
+    <div class="all-div">Class 01</div>
+    <div class="all-div">Class 02</div>
+  </body>
+
+  <script>
+    const lista = document.querySelector("ul");
+    const itens = lista.querySelectorAll("li");
+
+    //Pgando item 0 da lista
+    element_00 = document.getElementsByTagName("li")[0];
+    //alterando o texto do item 0(aplicando cor)
+    element_00.style.color = "blue";
+
+    //Pegando item 1 da lista
+    element_01 = document.getElementsByTagName("li")[1];
+    //alterando o texto do item 1(aplicando cor de fundo)
+    element_01.style.backgroundColor = "red";
+
+    //Pegando item 2 da lista
+    element_02 = document.getElementsByTagName("li")[2];
+    //alterando o texto do item 2
+    element_02.innerHTML = "Novo texto";
+
+    //selecionando o elemento div
+    element_03 = document.getElementById("conteudo");
+    //adicionando texto do elemento div
+    element_03.innerHTML = "<h2>Conteúdo da div</h2>";
+
+    //selecionando o elemento div name=div02
+    elementdiv_02 = document.getElementsByName("div02")[1];
+    //adicionando cor ao elemento div name=div02
+    elementdiv_02.style.color = "green";
+    //adicionando texto do elemento div
+    elementdiv_02.innerText = "Conteúdo da div name=div02";
+
+    //selecionando o elemento div class=class-name
+    elementdiv_03 = document.getElementsByClassName("class-name")[0];
+    //adicionando cor ao elemento div class=class-name
+    elementdiv_03.innerHTML = "<h2>Conteúdo da div com class-name</h2>";
+
+    // Agora usando seletores CSS
+    elementoSpanClass = document.querySelector("span.novo");
+    //     elementoSpanClass = document.querySelector("#span");
+    elementoSpanClass.style.color = "pink";
+
+    //Pegando todas as classes com o mesmo nome
+    elementoClassAll = document.querySelectorAll(".all-div");
+    //Aplicando cor red em todos os itens
+    elementoClassAll.forEach((element) => {
+      element.style.color = "red";
+    });
+  </script>
+</html>

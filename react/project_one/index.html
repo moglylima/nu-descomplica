@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React</title>
+
+    <!-- Adicionando React via CDN -->
+
+    <!-- React -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <!-- Rendenrizar -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+  </head>
+
+  <body>
+    <div id="app"></div>
+
+    <script>
+      // Criando um elemento React
+      function HelloFunction() {
+        // JSX
+        return (
+          //Aqui estamos criando uma tag h1
+          React.createElement("h1", {}, "Hello World function")
+        );
+      }
+
+      class HelloClass extends React.Component {
+        // JSX
+        render() {
+          return (
+            //Aqui estamos criando uma tag h1
+            React.createElement("h1", {}, "Hello World class")
+          );
+        }
+      }
+
+      function Hello01() {
+        return React.createElement(
+          "h1",
+          {},
+          React.createElement("span", {}, "Hello World 01 filho span "),
+          React.createElement("strong", {}, " Hello World 01 filho strong"),
+          " Texto qualquer"
+        );
+      }
+
+      // Renderizando o elemento React
+      ReactDOM.render(
+        // Aqui estamos criando o elemento, uma espécie de tag
+        //React.createElement(HelloFunction),
+
+        //React.createElement(HelloClass),
+
+        React.createElement(Hello01),
+
+        // Selecionando onde o elemento será renderizado
+        document.querySelector("#app")
+      );
+    </script>
+  </body>
+</html>

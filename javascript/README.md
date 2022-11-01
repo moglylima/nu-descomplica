@@ -2,8 +2,8 @@
 
 ## Introdução JavaScript - Aulas
 
-- Programando com JS
-- String e Instrução
-- Arrays
-- Funções e Classes
-- Elementos e Primeiros passos
+- [x] Programando com JS
+- [x] String e Instrução
+- [x] Arrays
+- [x] Funções e Classes
+- [x] Elementos e Primeiros passos

@@ -11,19 +11,17 @@ Formação em tecnologia Instituto Nu
 <h2>
     Disciplinas:
 </h2>
-<h4>
-    <ul>
-        <li>Diversidade</li>
-        <li>Inteligência Emocional</li>
-        <li>As Técnicas e Ferramentas para Gestão de Projetos e Produtos</li>
-        <li>Projeto de Vida</li>
-        <li>Introdução ao Desenvolvimento Web</li>
-        <li>O Design Thinking, UX e Metodologias Ágeis</li>
-        <li>O HTML, CSS e Bootstrap</li>
-        <li>Javascript</li>
-        <li>React</li>
-    </ul>
-</h4>
+
+- [x] Diversidade;
+- [ ] Inteligência Emocional;
+- [ ] As Técnicas e Ferramentas para Gestão de Projetos e Produtos;
+- [ ] Projeto de Vida;
+- [x] Introdução ao Desenvolvimento Web;
+- [ ] O Design Thinking, UX e Metodologias Ágeis;
+- [x] O HTML, CSS e Bootstrap;
+- [x] Javascript;
+- [ ] React.
+
 
 <p align="left">
 

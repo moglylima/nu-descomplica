@@ -6,9 +6,9 @@
 - [x] Fundamentos React
 - [x] React Hooks
 - [x] Context API
-- [ ]Formulários
-- [ ]Introdução ao projeto prático
-- [ ]Projeto prático: Arquitetura e Armazenamento
-- [ ]Projeto prático: Contex API e userReduce
-- [ ]Projeto prático: Pasta e pin
-- [ ]Finalizando últia página
+- [ ] Formulários
+- [ ] Introdução ao projeto prático
+- [ ] Projeto prático: Arquitetura e Armazenamento
+- [ ] Projeto prático: Contex API e userReduce
+- [ ] Projeto prático: Pasta e pin
+- [ ] Finalizando últia página

@@ -5,7 +5,7 @@
 - [x] Introdução
 - [x] Fundamentos React
 - [x] React Hooks
-- [x] Context API
+- [ ] Context API
 - [ ]Formulários
 - [ ]Introdução ao projeto prático
 - [ ]Projeto prático: Arquitetura e Armazenamento

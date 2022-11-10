@@ -15,13 +15,12 @@ Formação em tecnologia Instituto Nu
 - [x] Diversidade;
 - [ ] Inteligência Emocional;
 - [ ] As Técnicas e Ferramentas para Gestão de Projetos e Produtos;
-- [ ] Projeto de Vida;
+- [x] Projeto de Vida;
 - [x] Introdução ao Desenvolvimento Web;
 - [ ] O Design Thinking, UX e Metodologias Ágeis;
 - [x] O HTML, CSS e Bootstrap;
 - [x] Javascript;
 - [ ] React.
-
 
 <p align="left">
 

@@ -6,7 +6,7 @@
 - [x] Fundamentos React
 - [x] React Hooks
 - [x] Context API
-- [ ] Formulários
+- [x] Formulários
 - [ ] Introdução ao projeto prático
 - [ ] Projeto prático: Arquitetura e Armazenamento
 - [ ] Projeto prático: Contex API e userReduce

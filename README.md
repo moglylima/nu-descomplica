@@ -13,7 +13,7 @@ Formação em tecnologia Instituto Nu
 </h2>
 
 - [x] Diversidade;
-- [ ] Inteligência Emocional;
+- [x] Inteligência Emocional;
 - [ ] As Técnicas e Ferramentas para Gestão de Projetos e Produtos;
 - [x] Projeto de Vida;
 - [x] Introdução ao Desenvolvimento Web;

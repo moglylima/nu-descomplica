@@ -1,3 +1,4 @@
+// import ReactDOM from "react-dom";
 import { CardComponent } from "../../components/card/CardComponent";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -7,11 +8,30 @@ import { ModalComponent } from "../../components/modal/ModalComponent";
 import { ModalSavePin } from "../../containers/modalsavepin/ModalSavePin";
 import { ModalCreateFolder } from "../../containers/modalcreatefolder/ModalCreateFolder";
 
+import { NotificationAlert } from "../../components/notification/NotificationAlert";
+
+// //Exemplo do uso de portal
+// const Test = () => {
+//   return ReactDOM.createPortal(
+//     // Conteúdo do portal a ser renderizado
+//     <h4>Test portal</h4>,
+//     // Local onde o portal será renderizado
+//     document.body
+//   );
+// };
+
 export const HomePage = () => {
   return (
     <div>
-      <ModalCreateFolder open={true} />
+      {/* <Test /> */}
+      <ModalCreateFolder open={false} />
       {/* <ModalSavePin open={true} /> */}
+
+      <NotificationAlert
+        message={"Teste de notificação"}
+        variant={"success"}
+        onClose={() => console.log("Fechou")}
+      />
 
       {/* <ModalComponent
         title="Salvar"

@@ -1,4 +1,3 @@
-// import ReactDOM from "react-dom";
 import { CardComponent } from "../../components/card/CardComponent";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -8,52 +7,17 @@ import { ModalComponent } from "../../components/modal/ModalComponent";
 import { ModalSavePin } from "../../containers/modalsavepin/ModalSavePin";
 import { ModalCreateFolder } from "../../containers/modalcreatefolder/ModalCreateFolder";
 
-import { NotificationAlert } from "../../components/notification/NotificationAlert";
+// Aqui está sendo importado contextApp, que é o contexto criado no arquivo AppContext.js
+//import { ContextApp } from "../../store/AppContext";
 
-// //Exemplo do uso de portal
-// const Test = () => {
-//   return ReactDOM.createPortal(
-//     // Conteúdo do portal a ser renderizado
-//     <h4>Test portal</h4>,
-//     // Local onde o portal será renderizado
-//     document.body
-//   );
-// };
+// Aqui está sendo importado useAppContext, que é o hook que permite que você use o contexto em qualquer lugar do seu app
+import { useAppContext } from "../../store/AppContext";
 
 export const HomePage = () => {
+  const { state, dispatch } = useAppContext();
   return (
     <div>
-      {/* <Test /> */}
       <ModalCreateFolder open={false} />
-      {/* <ModalSavePin open={true} /> */}
-
-      <NotificationAlert
-        message={"Teste de notificação"}
-        variant={"success"}
-        onClose={() => console.log("Fechou")}
-      />
-
-      {/* <ModalComponent
-        title="Salvar"
-        open={true}
-        // Configurações dos botões do modal
-        controls={[
-          {
-            label: "Salvar",
-            variant: "primary",
-            onClick: () => {
-              console.log("Salvar");
-            },
-          },
-          {
-            label: "Cancelar",
-            variant: "secondary",
-            onClick: () => {
-              console.log("Cancelar");
-            },
-          },
-        ]}
-      ></ModalComponent> */}
 
       <Container fluid>
         <Row>

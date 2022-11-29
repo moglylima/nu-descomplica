@@ -3,16 +3,26 @@ import { HeaderPartials } from "./partials/headerpartials/HeaderPartials";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MyFolderPages } from "./pages/myfolderpages/MyPagesFolder";
+import { AppContext } from "./store/AppContext";
+
+const initialState = {
+  activePinId: null,
+  mode: null,
+  folders: [],
+  type: null,
+};
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <HeaderPartials />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/minhas-pastas" element={<MyFolderPages />} />
-        </Routes>
+        <AppContext initialState={initialState}>
+          <HeaderPartials />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/minhas-pastas" element={<MyFolderPages />} />
+          </Routes>
+        </AppContext>
       </div>
     </BrowserRouter>
   );

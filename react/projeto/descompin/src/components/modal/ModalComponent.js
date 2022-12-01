@@ -1,9 +1,15 @@
 import Modal from "react-bootstrap/Modal";
 import { ButtonSpinner } from "../button/ButtonSpinner";
 
-export const ModalComponent = ({ title, children, open, controls = [] }) => {
+export const ModalComponent = ({
+  title,
+  children,
+  open,
+  controls = [],
+  onHide,
+}) => {
   return (
-    <Modal show={open} onHide={() => {}}>
+    <Modal show={open} onHide={onHide}>
       <Modal.Header closeButton>
         <Modal.Title>{title}</Modal.Title>
       </Modal.Header>

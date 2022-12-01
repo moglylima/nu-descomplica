@@ -3,45 +3,53 @@ import Row from "react-bootstrap/Row";
 import ListGroup from "react-bootstrap/ListGroup";
 import { ModalComponent } from "../../components/modal/ModalComponent";
 import { ButtonSpinner } from "../../components/button/ButtonSpinner";
+import { useAppContext } from "../../store/AppContext";
+import {
+  closeModalAction,
+  fetchFoldersAction,
+  openModalCreateFolderAction,
+} from "../../store/actions";
+import { useEffect } from "react";
 
 export const ModalSavePin = ({ open }) => {
+  const { state, dispatch } = useAppContext();
+  const handleClose = () => {
+    console.log("Clicou no botão fechar!");
+    dispatch(closeModalAction());
+  };
+
+  const handleClickCreateFolder = () => {
+    console.log("Clicou no botão criar pasta!");
+    dispatch(openModalCreateFolderAction());
+  };
+  useEffect(() => {
+    console.log("Listando folders!");
+    fetchFoldersAction(dispatch);
+  }, []);
   return (
     <ModalComponent
-      open={open}
       title="Salvar Pin"
+      open={open}
+      onHide={handleClose}
       controls={[
         {
           label: "Criar Pasta",
           variant: "secondary",
-          onClick: () => console.log("Criar pasta!"),
+          onClick: handleClickCreateFolder,
         },
       ]}
     >
       <ListGroup variant="flush">
-        <ListGroup.Item>
-          <Row>
-            <Col xs={8}>Matematica</Col>
-            <Col xs={4} className="text-end">
-              <ButtonSpinner label="Salvar" loadingLabel="Salvando" />
-            </Col>
-          </Row>
-        </ListGroup.Item>
-        <ListGroup.Item>
-          <Row>
-            <Col xs={8}>Fisica</Col>
-            <Col xs={4} className="text-end">
-              <ButtonSpinner label="Salvar" loadingLabel="Salvando" />
-            </Col>
-          </Row>
-        </ListGroup.Item>
-        <ListGroup.Item>
-          <Row>
-            <Col xs={8}>Quimica</Col>
-            <Col xs={4} className="text-end">
-              <ButtonSpinner label="Salvar" loadingLabel="Salvando" />
-            </Col>
-          </Row>
-        </ListGroup.Item>
+        {state.folders.map((folder, folderIndex) => (
+          <ListGroup.Item key={folderIndex}>
+            <Row>
+              <Col xs={8}>{folder.name}</Col>
+              <Col xs={4} className="text-end">
+                <ButtonSpinner label="Salvar" loadingLabel="Salvando" />
+              </Col>
+            </Row>
+          </ListGroup.Item>
+        ))}
       </ListGroup>
     </ModalComponent>
   );

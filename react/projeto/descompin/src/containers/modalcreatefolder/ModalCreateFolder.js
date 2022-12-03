@@ -6,20 +6,22 @@ import { useAppContext } from "../../store/AppContext";
 
 export const ModalCreateFolder = ({ open }) => {
   const { state, dispatch } = useAppContext();
-  const [folderName, setFolderName] = useState("");
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Fez submit ", folderName);
-    saveFolderAction(dispatch, folderName);
-  };
 
-  const handleChange = (event) => {
-    setFolderName(event.target.value);
-  };
+  const [folderName, setFolderName] = useState("");
 
   const handleClose = () => {
     console.log("Clicou no botão fechar!");
     dispatch(closeModalAction());
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Fez submit ", folderName);
+    saveFolderAction(dispatch, folderName);
+  };
+
+  const handleChange = (e) => {
+    setFolderName(e.target.value);
   };
 
   return (

@@ -13,6 +13,7 @@ import { useEffect } from "react";
 
 export const ModalSavePin = ({ open }) => {
   const { state, dispatch } = useAppContext();
+
   const handleClose = () => {
     console.log("Clicou no botão fechar!");
     dispatch(closeModalAction());
@@ -22,10 +23,12 @@ export const ModalSavePin = ({ open }) => {
     console.log("Clicou no botão criar pasta!");
     dispatch(openModalCreateFolderAction());
   };
+
   useEffect(() => {
     console.log("Listando folders!");
     fetchFoldersAction(dispatch);
   }, []);
+
   return (
     <ModalComponent
       title="Salvar Pin"

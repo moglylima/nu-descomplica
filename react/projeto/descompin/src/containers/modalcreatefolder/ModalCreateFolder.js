@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import { ModalComponent } from "../../components/modal/ModalComponent";
 import { closeModalAction, saveFolderAction } from "../../store/actions";
 import { useAppContext } from "../../store/AppContext";
+import { saveFolderInitType } from "../../store/types";
 
 export const ModalCreateFolder = ({ open }) => {
   const { state, dispatch } = useAppContext();
@@ -17,6 +18,7 @@ export const ModalCreateFolder = ({ open }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Fez submit ", folderName);
+    console.log("state.type ", state.type, saveFolderInitType);
     saveFolderAction(dispatch, folderName);
   };
 
@@ -34,7 +36,7 @@ export const ModalCreateFolder = ({ open }) => {
           label: "Criar e Salvar",
           loadingLabel: "Criando",
           variant: "secondary",
-          loading: false,
+          loading: state.type === saveFolderInitType,
           type: "submit",
           form: "form-create-folder",
         },

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
@@ -10,18 +10,26 @@ import { CardContainer } from "../../containers/cardcontainer/CardContainer";
 import { useAppContext } from "../../store/AppContext";
 import { saveFolderSuccessType } from "../../store/types";
 import { NotificationAlert } from "../../components/notification/NotificationAlert";
+import userEvent from "@testing-library/user-event";
 
 export const HomePage = () => {
   const { state, dispatch } = useAppContext();
+  const [showFeedBack, setShowFeedBack] = React.useState(false);
+
+  useEffect(() => {
+    if (state.type === saveFolderSuccessType) {
+      setShowFeedBack(true);
+    }
+  }, [state.type]);
   return (
     <div>
       <ModalSavePin open={state.mode === "savePin"} />
       <ModalCreateFolder open={state.mode === "createFolder"} />
 
-      {state.type === saveFolderSuccessType && (
+      {showFeedBack && (
         <NotificationAlert
           message={"Pasta criada com sucesso!"}
-          onClose={() => console.log("Fechou a notificação!")}
+          onClose={() => setShowFeedBack(false)}
         />
       )}
 

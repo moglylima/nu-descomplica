@@ -1,12 +1,17 @@
-// file constantes
-export const openModalSavePintype = "OPEN_MODAL_SAVE_PIN";
-export const openModalCreateFolderType = "OPEN_MODAL_CREATE_FOLDER";
-export const closeModaltype = "CLOSE_MODAL";
+export const openModalSavePinType = "open modal save pin";
+export const openModalCreateFolderType = "open modal create folder";
+export const closeModalsType = "close modals";
 
-export const fetchFoldersInitType = "FETCH_FOLDERS_INIT";
-export const fetchFoldersSuccessType = "FETCH_FOLDERS_SUCCESS";
-export const fetchFoldersType = "FETCH_FOLDERS";
+export const fetchFoldersInitType = "fetch folders init";
+export const fetchFoldersSuccessType = "fetch folders success";
+export const fetchFoldersType = "fetch folders";
 
-export const saveFolderInitType = "SAVEFOLDER_INIT";
-export const saveFolderSuccessType = "SAVEFOLDER_SUCCESS";
-export const saveFolderType = "SAVEFOLDER";
+export const saveFolderInitType = "save folder init";
+export const saveFolderSuccessType = "saveFolder success";
+export const saveFolderType = "saveFolder";
+
+export const savePinInFolderInitType = "save pin in folder init";
+export const savePinInFolderSuccessType = "save pin in folder success";
+
+export const fetchPinsInitType = "fetch pins init";
+export const fetchPinsSuccessType = "fetch pins success";

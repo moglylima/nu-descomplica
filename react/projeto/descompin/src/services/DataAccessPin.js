@@ -1,55 +1,91 @@
-/*
+/**
  * getFolders()
  * saveFolder()
- * savePinFolder()
+ * savePinInFolder()
+ */
 
-  Os métodos do Local Storage são sincronos, porém vamos simular o comportamento assincrono!
-
-*/
-
-// Gera ID
-const generateId = new Date().getTime();
-
+// const generateId = () => {
+//   return `${Math.floor(Math.random() * 100_000).toString(16)}-${Math.floor(
+//     Math.random() * 100_000
+//   ).toString(16)}`;
+// };
+const generateId = () => {
+  const id = Math.floor(Date.now() / 10000).toString(8);
+  console.log("Id Gerado -> ", id);
+  return id;
+};
 const saveFolders = async (folders) => {
   localStorage.setItem("folders", JSON.stringify(folders));
 };
 
-//Get Folders
 export const getFolders = async () => {
   return JSON.parse(localStorage.getItem("folders")) || [];
 };
 
-//Save Folder
 export const saveFolder = async (folderName) => {
+  /** PASSOS
+   * * Pegar lista/array de pastas -> getFolders()
+   * * Adicionar a pasta dentro desse array
+   * * Salvar novamente no localStorage
+   */
+
   const folders = await getFolders();
 
   const newFolder = {
-    id: generateId,
+    id: generateId(),
     name: folderName,
     pins: [],
   };
 
   folders.push(newFolder);
-  // localStorage.setItem("folders", JSON.stringify(folders));
+
   await saveFolders(folders);
+
   return newFolder;
 };
 
 export const savePinInFolder = async (folderId, pinId) => {
+  /**
+   * * Listar coleção/array de pastas do Storage
+   * * Encontrar a pasta que queremos adicionar pin
+   * * Adicionar o pinId na pasta
+   * * Salvar pastas no Storage novamente
+   */
+
   const folders = await getFolders();
 
-  // Caso não encontre o folderId, retorna -1
-  const folderIndex = folders.findIndex((folder) => folder.id === folderId);
+  const folderIndex = folders.findIndex(function (folder) {
+    return folder.id === folderId;
+  });
+
   if (folderIndex !== -1) {
-    // Caso não encontre o pinId no folder, seta o pin no folder
-
     folders[folderIndex].pins.push(pinId);
-    // Salva no Local Storage
-    //localStorage.setItem("folders", JSON.stringify(folders));
-    await saveFolders(folders);
-
-    // Retorna o folder atualizado
-    return { ...folders[folderIndex] };
-    //id: folderId
   }
+
+  await saveFolders(folders);
+
+  return { ...folders[folderIndex] };
+};
+
+export const getPins = async () => {
+  return [
+    {
+      id: "123",
+      title: "Trigonometria",
+      image: "https://picsum.photos/200/300?53",
+      total: 0,
+    },
+    {
+      id: "133",
+      title: "JavaScript",
+      image: "https://picsum.photos/200/300?13",
+      total: 0,
+    },
+    {
+      id: "134",
+      title: "React JS",
+      image: "https://picsum.photos/200/300?52",
+      total: 0,
+    },
+  ];
 };

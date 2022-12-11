@@ -1,5 +1,5 @@
 import * as types from "./types";
-import * as pinService from "../services/pinService";
+import * as pinService from "../services/DataAccessPin";
 
 const sleep = (time) =>
   new Promise((resolve) => {
@@ -11,7 +11,7 @@ export const openModalSavePinAction = (pinId) => ({
   payload: pinId,
 });
 
-export const openModalCreateFolder = () => ({
+export const openModalCreateFolderAction = () => ({
   type: types.openModalCreateFolderType,
 });
 
@@ -47,9 +47,13 @@ export const saveFolderSuccessAction = (folder) => ({
 
 export const saveFolderAction = async (dispatch, folderName, pinId) => {
   dispatch(saveFolderInitAction());
+
   await sleep(1000);
+
   const newFolder = await pinService.saveFolder(folderName);
+
   const folder = await pinService.savePinInFolder(newFolder.id, pinId);
+
   dispatch(saveFolderSuccessAction(folder));
 };
 
@@ -70,7 +74,9 @@ export const savePinInFolderAction = async (dispatch, pinId, folderId) => {
   await sleep(1000);
 
   await pinService.savePinInFolder(folderId, pinId);
+
   const folders = await pinService.getFolders();
+
   dispatch(savePinInFolderSuccessAction(folders));
 };
 
@@ -87,8 +93,12 @@ export const fetchPinsSuccessAction = (pinsData) => ({
 
 export const fetchPinsAction = async (dispatch) => {
   dispatch(fetchPinsInitAction());
+
   await sleep(1000);
+
   const pinsData = await pinService.getPins();
+
   console.log("pinsData", pinsData);
+
   dispatch(fetchPinsSuccessAction(pinsData));
 };

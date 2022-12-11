@@ -17,7 +17,9 @@ export const ButtonSpinner = ({
             role="status"
             aria-hidden="true"
             size="sm"
-          />{" "}
+          >
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>{" "}
         </>
       )}
       {loading ? loadingLabel : label}

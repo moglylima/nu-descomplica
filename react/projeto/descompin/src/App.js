@@ -10,6 +10,7 @@ const initialState = {
   mode: null,
   folders: [],
   type: null,
+  pins: [],
 };
 
 function App() {

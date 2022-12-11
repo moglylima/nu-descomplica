@@ -4,9 +4,9 @@ import { useAppContext } from "../../store/AppContext";
 
 export const CardContainer = (props) => {
   const { state, dispatch } = useAppContext();
-  const hadleClick = () => {
-    console.log("Clicou no card");
-    dispatch(openModalSavePinAction());
+  const hadleClick = (id) => {
+    console.log("Clicou no card", id);
+    dispatch(openModalSavePinAction(id));
   };
   return <CardComponent {...props} onClick={hadleClick} />;
 };
